@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormControl, InputLabel, Select, MenuItem, Button, TextField, Grid, Typography } from '@mui/material';
+import { FormControl, Select, MenuItem, Button, TextField, Grid, Typography } from '@mui/material';
 import events from '../data/events';
 
 const AddEvent = ({ slot, onClose }) => {
@@ -88,7 +88,18 @@ const AddEvent = ({ slot, onClose }) => {
           </Grid>
         </Grid>
 
-        <Button variant="contained" color="primary" onClick={handleSubmit} className="w-full">Submit</Button>
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
+            <Button variant="contained" color="primary" onClick={handleSubmit} fullWidth>
+              Submit
+            </Button>
+          </Grid>
+          <Grid item xs={6}>
+            <Button variant="contained" color="error" onClick={() => onClose()} fullWidth>
+              Cancel
+            </Button>
+          </Grid>
+        </Grid>
       </div>
     </div>
   );

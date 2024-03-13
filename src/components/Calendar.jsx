@@ -22,13 +22,13 @@ const MyCalendar = () => {
 
   const handleSelectEvent = (event) => {
     setOpenInfoModal(true);
-    console.log('Selected event:', event);
     setSelectedEvent(event);
     setOpenInfoModal(true);
   };
 
   const closeModal = () => {
     setOpenModal(false);
+    setOpenInfoModal(false);
     setSelectedSlot(null);
     setSelectedEvent(null);
   };
